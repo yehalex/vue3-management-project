@@ -59,10 +59,10 @@ const submitForm = async () => {
 
     if (username.value === 'admin' && password.value === 'admin') {
         setToken('admin');
-        await router.push('/home');
+        await router.push('/ProductManagement');
     } else if (username.value === 'visitor' && password.value === 'visitor') {
         setToken('visitor');
-        await router.push('/home');
+        await router.push('/ProductManagement');
     } else {
         alert('Incorrect username and password combination');
     }
