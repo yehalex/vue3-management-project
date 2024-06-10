@@ -21,8 +21,8 @@
                         <td class="px-6 py-4 whitespace-normal break-words">{{ product.title }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ product.price }}</td>
                         <td class="px-6 py-4 whitespace-nowrap">
-                            <button @click="modifyProduct(product.id)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Modify</button>
-                            <button @click="deleteProduct(product.id)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-4">Delete</button>
+                            <button @click="modifyProduct(product.id)" disabled class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-not-allowed">Modify</button>
+                            <button @click="deleteProduct(product.id)" disabled class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-4 cursor-not-allowed">Delete</button>
                         </td>
                     </tr>
                 </tbody>
