@@ -13,13 +13,13 @@
 
 <script setup lang="ts">
     import { getTodos } from '../../../api';  
-    import { onBeforeMount } from 'vue';
+    import { onMounted } from 'vue';
     import { ref } from 'vue';
     import TodoCard from '../../../components/TodoCard.vue';
 
     let todos:any = ref([]);
     
-    onBeforeMount(async () => {
+    onMounted(async () => {
         const data = await getTodos();
         todos.value = data;
     });

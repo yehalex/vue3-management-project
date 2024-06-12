@@ -37,7 +37,7 @@
 
 <script setup>
     import { getProducts } from '@/api';
-    import { onBeforeMount } from 'vue';
+    import { onMounted} from 'vue';
     import { ref, computed } from 'vue';
 
     const pageSize = 5; // Number of products per page
@@ -45,7 +45,7 @@
 
     let data = ref([]);
     
-    onBeforeMount(async () => {
+    onMounted(async () => {
         const productsList = await getProducts();
         data.value = productsList;
     });
