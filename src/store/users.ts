@@ -1,10 +1,11 @@
 import { defineStore } from 'pinia';
-import { reactive } from "vue";
+import { reactive, watch } from "vue";
 
 
 export const useUsersStore = defineStore('users', () => {
     // same as state()
-    const userList = reactive([
+    const userList = reactive(
+        JSON.parse(localStorage.getItem('userList') as string) || [
         {id: 1, username: 'admin', password: 'admin', role: 'admin'},
         {id: 2, username: 'visitor', password: 'visitor', role: 'user'},
     ])
@@ -30,6 +31,10 @@ export const useUsersStore = defineStore('users', () => {
             user.role = user.role === 'admin' ? 'user' : 'admin';
         }
     }
+
+    watch(userList, (newUserList) => {
+        localStorage.setItem('userList', JSON.stringify(newUserList));
+    }, { deep: true });
     
     return {userList, getUsers, addUser, deleteUser, changeRole}
 })

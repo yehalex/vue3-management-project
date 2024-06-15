@@ -27,8 +27,8 @@ export const constantRoute = [
                 beforeEnter: () => {
                     const token = getToken();
                     if (token !== 'admin') {
-                        return false
-                    }                    
+                        return false;
+                    };                    
                 },
             },
             {
